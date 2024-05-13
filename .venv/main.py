@@ -5,9 +5,5 @@ app = Flask(__name__)
 def hell_world():
     return "<h1> Hello World! </h1>"
 
-@app.route('/about/<username>')
-def about_page(username):
-    return f"<h1> This is the about page of {username}</h1>"
-
 if __name__=='__main__':
     app.run(debug=True)
