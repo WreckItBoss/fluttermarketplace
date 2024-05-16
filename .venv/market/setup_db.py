@@ -1,5 +1,5 @@
-from main import app, db
-from main import Item
+from market import app, db
+from market.models import Item
 
 with app.app_context():
     db.drop_all()
