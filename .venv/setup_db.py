@@ -9,4 +9,5 @@ with app.app_context():
     db.session.add(item1)
     db.session.add(item2)
     db.session.commit()
+    db.session.commit()
     print(Item.query.all()) 
