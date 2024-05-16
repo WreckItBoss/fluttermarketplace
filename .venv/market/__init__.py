@@ -15,4 +15,8 @@ def create_app():
             db.session.add(item1)
             db.session.add(item2)
             db.session.commit()
+        if db.session.query(models.User).count() == 0:
+            user1 = models.User(username='jsc', password_hash='123456', email_address='jsc@jsc.com')
+            db.session.add(user1)
+            db.session.commit()
     return app

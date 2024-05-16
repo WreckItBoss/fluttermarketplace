@@ -14,7 +14,7 @@ class Item(db.Model):
     price = db.Column(db.Float, nullable=False)
     barcode = db.Column(db.String(12), unique=True, nullable=False)
     description = db.Column(db.String(1024), nullable=True)
-    owner = db.Column(db.Integer(), db.ForeigKey('user.id'))
+    owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
 
     def __repr__(self):
         return f'Item {self.name}'

@@ -1,5 +1,5 @@
 from market import app, db
-from market.models import Item
+from market.models import Item, User
 
 with app.app_context():
     db.drop_all()
