@@ -5,11 +5,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///market.db'
 db = SQLAlchemy(app)
 
 class Item(db.Model):
-    id = db.Column(db.Integer(), primary_key = True)
-    name = db.Column(db.String(length = 30), nullable = False)
-    price = db.Column(db.Integer(), nullable = False)
-    barcode = db.Column(db.String(length = 12), nullable = False, unique = True)
-    description = db.Column(db.String(length = 1024), nullable = False, unique = True)
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    barcode = db.Column(db.String(12), unique=True, nullable=False)
+    description = db.Column(db.String(1024), nullable=True)
 
     def __repr__(self):
         return f'Item {self.name}'
