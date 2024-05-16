@@ -7,6 +7,7 @@ db = SQLAlchemy(app)
 from market import routes, models
 def create_app():
     with app.app_context():
+        db.drop_all()
         db.create_all()
         # Check if the database is empty, then populate it
         if db.session.query(models.Item).count() == 0:
@@ -19,4 +20,5 @@ def create_app():
             user1 = models.User(username='jsc', password_hash='123456', email_address='jsc@jsc.com')
             db.session.add(user1)
             db.session.commit()
+        print(models.User.query.all()) 
     return app
